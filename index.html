@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <title>Twitter 2 jQuery</title>
-  <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
   <link rel="stylesheet" href="css/main.css">
 </head>
 
@@ -15,27 +15,29 @@
       <h1>Twitter 2 jQuery</h1>
     </nav>
   </header>
-  <div class="container">
+  <section class="container">
     <div class="row">
-      <form class=".col-xs-12">
+      <form class=".col-xs-12" id="formulario">
         <div class="row">
-          <div class=".col-xs-12">
-            <textarea id="textarea1"></textarea>
-            <label>Deja un mensaje</label>
+          <div class="div form-group">
+            <label for="message">Deja un mensaje</label>
+            <textarea id="textoMensaje" name="message" class="form-control"></textarea>
           </div>
         </div>
+          <button type="submit" class="btn btn-default">Enviar</button>
       </form>
     </div>
-  </div>
+  </section>
   <div class="container">
     <div class="row">
-  <a href="#">Enviar</a>
-  </div>
+        <section id="posts" class="container">
+      	</section>
+    </div>
   </div>
 
   <script src="js/jquery-3.2.1.min.js"></script>
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <scrip src="js/app.js"></scrip>
+  <script src="js/app.js"></script>
 </body>
 
 </html>
