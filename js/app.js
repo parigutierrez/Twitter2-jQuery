@@ -1,30 +1,34 @@
-// Cuando carga la página
-window.addEventListener("load", function () {
-	// Envío de To - Do
-	var formulario = document.getElementById("formulario");
-	formulario.addEventListener("submit", function (e) {
-		e.preventDefault();
-		// Obtenemos datos
-		var contenedor = document.getElementById("posts");
-		var mensajeContenedor = document.getElementById("textoMensaje");
-		var mensaje = mensajeContenedor.value;
-    console.log(mensaje);
+// Cargar página
+function cargarPagina(){
+	
+		// Envío de To - Do con JQuery
 
-		// Creamos elementos
-		var postContenedor = document.createElement("article");
-		var post = document.createElement("p");
+	
+		$("#formulario").submit(imprimir); 
+		function imprimir(e){
+			e.preventDefault();
+			// Obtenemos datos
+			
+			$("#textoMensaje").val();
+			
+	    	console.log($("#textoMensaje").val());
 
-		// Personalizamos elementos
-		postContenedor.className = "jumbotron";
-		post.textContent = mensaje;
 
-		// Agregarlos al DOM
-		postContenedor.appendChild(post);
+			
+			$("#enviar").click(mostrarTweet);
+		
+			
+			function mostrarTweet() {
+			//teet es el id del textarea	
+  			var $textoMensaje = $("#posts");
+  			//teets es el id section
+  			$textoMensaje.prepend("<article class='row jumbotron'><div class='col s12 m12'><span class='card-title activator'>" + $("#textoMensaje").val() + "</span></div></article>"); 
+  			$("#textoMensaje").val(" ");
 
-		// Agregarlo a un elemento existente para visualizarlo
-		contenedor.appendChild(postContenedor);
+			}
 
-		// Borrar contenido de textarea
-		mensajeContenedor.value = "";
-	});
-});
+			
+		}
+	
+};
+$(document).ready(cargarPagina);
